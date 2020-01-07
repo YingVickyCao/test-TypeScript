@@ -20,3 +20,11 @@
 .App-link {
   color: #09d3ac;
 }
+
+.App-btn {
+  margin-top: 10px;
+  font-size: xx-large;
+  background-color: #ff0000;
+  min-height: 50px;
+  min-width: 200px;
+}

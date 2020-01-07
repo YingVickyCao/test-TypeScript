@@ -5,16 +5,28 @@ import "./App.css";
 // TypeScript,start
 import { hi } from "./example";
 import { hiPerson, Person } from "./classes/People";
+import { hiStu, Stu } from "./interfaces/Student";
 // TypeScript,end
 
-export function test_on() {
+export function test_on() {}
+
+export const test_off = () => {
+  // Hello world Typescipt
+  hi("TypeScript");
+
+  // Interface
   let p = new Person("Vanne", "Mimmie");
   let p_namme = hiPerson(p);
   console.log(p_namme);
-}
 
-export const test_off = () => {
-  hi("TypeScript");
+  // Class with ingerface
+  let stu = {
+    firstName: "Apple",
+    lastName: "Com"
+  };
+
+  let result = hiStu(stu);
+  console.log(result);
 };
 
 // function App() {
@@ -52,8 +64,8 @@ export default class App extends Component {
             Learn TypeScript
           </a>
 
-          <button className="App-link" onClick={this._onClick_4_TypeScript}>
-            TypeScript
+          <button className="App-btn" onClick={this._onClick_4_TypeScript}>
+            test
           </button>
         </header>
       </div>
@@ -61,6 +73,6 @@ export default class App extends Component {
   }
   _onClick_4_TypeScript() {
     test_on();
-    test_off();
+    // test_off();
   }
 }

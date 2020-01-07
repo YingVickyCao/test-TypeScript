@@ -8,13 +8,6 @@ export interface Stu {
 //     return "Hi, " + stu.firstName + " " + stu.lastName;
 // }
 
-function hiStu(stu: Stu) {
+export function hiStu(stu: Stu) {
     return "Hi, " + stu.firstName + " " + stu.lastName;
 }
-
-let stu = {
-    firstName: "Vanne",
-    lastName: "Mimmie"
-};
-
-document.body.textContent = hiStu(stu);
