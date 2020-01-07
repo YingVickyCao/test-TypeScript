@@ -6,9 +6,12 @@ import "./App.css";
 import { hi } from "./example";
 import { hiPerson, Person } from "./classes/People";
 import { hiStu, Stu } from "./interfaces/Student";
+import { test_basic_types } from "./basic_types/test_basic_types";
 // TypeScript,end
 
-export function test_on() {}
+export function test_on() {
+  test_basic_types();
+}
 
 export const test_off = () => {
   // Hello world Typescipt
