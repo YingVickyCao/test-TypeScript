@@ -13,6 +13,9 @@ import { test_modifiers_protected2 } from "./classes/modifiers_ protected2";
 import { test_modifier_Readonly } from "./classes/modifier_readonly";
 import { hiStu, Stu } from "./interfaces/Student";
 import { test_basic_types } from "./basic_types/test_basic_types";
+import { test_setter_checks } from "./classes/accessors";
+import { test_static_properties } from "./classes/static_properties";
+
 // TypeScript,end
 
 export function test_on() {
@@ -23,7 +26,9 @@ export function test_on() {
   // test_modifiers_private2();
   // test_modifiers_protected();
   // test_modifiers_protected2();
-  test_modifier_Readonly();
+  // test_modifier_Readonly();
+  // test_setter_checks();
+  test_static_properties();
   // END:Class with ingerface,end
 }
 
