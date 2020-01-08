@@ -7,6 +7,7 @@ import { hi } from "./example";
 import { test_class } from "./classes/people";
 import { test_inheritance } from "./classes/inheritance";
 import { test_modifiers_private } from "./classes/modifiers_private";
+import { test_modifiers_private2 } from "./classes/modifiers_private2";
 import { hiStu, Stu } from "./interfaces/Student";
 import { test_basic_types } from "./basic_types/test_basic_types";
 // TypeScript,end
@@ -15,7 +16,8 @@ export function test_on() {
   // START:Class with ingerface
   // test_class();
   // test_inheritance();
-  test_modifiers_private();
+  // test_modifiers_private();
+  test_modifiers_private2();
   // END:Class with ingerface,end
 }
 
