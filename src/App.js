@@ -10,6 +10,7 @@ import { test_modifiers_private } from "./classes/modifiers_private";
 import { test_modifiers_private2 } from "./classes/modifiers_private2";
 import { test_modifiers_protected } from "./classes/modifiers_ protected";
 import { test_modifiers_protected2 } from "./classes/modifiers_ protected2";
+import { test_modifier_Readonly } from "./classes/modifier_readonly";
 import { hiStu, Stu } from "./interfaces/Student";
 import { test_basic_types } from "./basic_types/test_basic_types";
 // TypeScript,end
@@ -21,7 +22,8 @@ export function test_on() {
   // test_modifiers_private();
   // test_modifiers_private2();
   // test_modifiers_protected();
-  test_modifiers_protected2();
+  // test_modifiers_protected2();
+  test_modifier_Readonly();
   // END:Class with ingerface,end
 }
 
