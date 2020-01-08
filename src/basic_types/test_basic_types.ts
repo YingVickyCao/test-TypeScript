@@ -5,7 +5,15 @@ export function test_basic_types() {
     // test_string();
     // test_array();
     // test_tupe();
-    test_enum();
+    // test_enum();
+    // test_any();
+    // test_void();
+    // test_null();
+    // test_underfined();
+    // test_null();
+    // test_never();
+    // test_object();
+    test_type_assertions();
 }
 
 // Boolean
@@ -73,6 +81,7 @@ function test_tupe() {
     // data[10] = 'B';  // ERROR:Tuple type '[string, number]' of length '2' has no element at index '10'.  TS2493
 }
 
+// Enum
 function test_enum() {
     enum Color { Red, Green, Blue = 20 }
     let color: Color = Color.Red;
@@ -92,4 +101,120 @@ function test_enum() {
 
     let colorName: string = Color[1]; // value -> name
     console.log(colorName); // Green
+}
+
+// Any
+function test_any() {
+    {
+        let not_sure: any = 4;
+        console.log(not_sure);  // 4
+
+        not_sure = "Current is a string";
+        console.log(not_sure);  // Current is a string
+
+        not_sure = false;
+        console.log(not_sure);  // false
+    }
+
+    // TODO:
+    {
+        // let not_sure: any = 4;
+        // not_sure.ifItExists(); // ERROR
+        // not_sure.toFixed();  // ERROR
+    }
+}
+
+// Void: only can set undefined
+function test_void(): void {// function not return a value
+    // let value: void;
+    // console.log(value) // ERROR: Variable 'value' is used before being assigned.  TS2454
+
+    let value: void = undefined;
+    console.log(value); // undefined
+
+    // ERROR:Type 'null' is not assignable to type 'void'.  TS2322
+    // OK if '--strictNullChecks' is not given
+    // value = null;
+    // console.log(value);
+}
+
+// Null
+function test_null() {
+    let value: null = null;
+    console.log(value); // undefined
+    // value = '5';  // ERROR:Type '"5"' is not assignable to type 'null'.  TS2322 => '--strictNullChecks'
+
+    let str: string = '4';
+    console.log(str);   // 4
+    // num = null; // ERROR:Type 'null' is not assignable to type 'string'.  TS2322  =>  '--strictNullChecks'
+
+    let str2: string | null = '4';  // union type: string | null
+    console.log(str2);   // 4
+    str2 = null;
+    console.log(str2); // null
+
+    // let str3: string = null; // ERROR:Type 'null' is not assignable to type 'string'.  TS2322
+}
+
+// Undefined
+function test_underfined() {
+    let value: undefined = undefined;
+    console.log(value); // undefined
+    // value = '5';  // ERROR:Type '"5"' is not assignable to type 'undefined'.  TS2322 => '--strictNullChecks'
+
+    let str: string = '4';
+    console.log(str);   // 4
+    // num = undefined; // ERROR:Type 'undefined' is not assignable to type 'string'.  TS2322  =>  '--strictNullChecks'
+
+    let str2: string | undefined = '4';  // union type: string | undefined
+    console.log(str2);   // 4
+    str2 = undefined;
+    console.log(str2); // undefined
+
+    // let str3: string = undefined; // ERROR:Type 'undefined' is not assignable to type 'string'.  TS2322
+}
+
+// Never
+// TODO:使用场景
+function test_never() {
+    fail();
+}
+
+// function error(message: string): never {
+//     return new Error(message); // ERROR:Type 'Error' is not assignable to type 'never'.ts(2322) 
+// }
+
+function fail() {
+    // return error('loading failed');
+}
+
+// Object                                      
+// TODO:
+function test_object() {
+    // create(o: object | null): any;
+    // let v1: null = Object.create(null);
+    // console.log(v1); // {}
+    // console.log(Object.create({ prop: 0 })); // {}
+    // Object.create(42);  // ERROR:Argument of type '42' is not assignable to parameter of type 'object | null'.  TS2345
+    // Object.create('Str');   // ERROR:Argument of type '"Str"' is not assignable to parameter of type 'object | null'.  TS2345
+    // Object.create(false);   // ERROR:Argument of type 'false' is not assignable to parameter of type 'object | null'.  TS2345
+    // Object.create(undefined);   // ERRROR:Argument of type 'undefined' is not assignable to parameter of type 'object | null'.  TS2345
+}
+
+// Type assertions:Compile time, no runtime impact
+function test_type_assertions() {
+    {
+        let value: any = "ABC";
+        let strLen: number = (<string>value).length;
+        let strLen2: number = (value as string).length;
+        console.log(strLen)     // 3 
+        console.log(strLen2)    // 3 
+    }
+
+    {
+        let value: any = 10;
+        // 仅仅目的具体类型是什么，即使不匹配，no error,too
+        let strLen: number = (<string>value).length;
+        console.log(strLen)     // undefined+
+    }
 }
