@@ -4,32 +4,34 @@ import "./App.css";
 
 // TypeScript,start
 import { hi } from "./example";
-import { hiPerson, Person } from "./classes/People";
+import { test_class } from "./classes/people";
+import { test_inheritance } from "./classes/inheritance";
 import { hiStu, Stu } from "./interfaces/Student";
 import { test_basic_types } from "./basic_types/test_basic_types";
 // TypeScript,end
 
 export function test_on() {
-  test_basic_types();
+  // START:Class with ingerface
+  // test_class();
+  test_inheritance();
+  // END:Class with ingerface,end
 }
 
 export const test_off = () => {
   // Hello world Typescipt
   hi("TypeScript");
 
-  // Interface
-  let p = new Person("Vanne", "Mimmie");
-  let p_namme = hiPerson(p);
-  console.log(p_namme);
-
-  // Class with ingerface
+  // START:Interface
   let stu = {
     firstName: "Apple",
     lastName: "Com"
   };
-
   let result = hiStu(stu);
   console.log(result);
+  // END:START
+
+  // Basic types
+  test_basic_types();
 };
 
 // function App() {
