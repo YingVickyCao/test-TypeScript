@@ -6,14 +6,14 @@ export function test_basic_types() {
     // test_array();
     // test_tupe();
     // test_enum();
-    // test_any();
+    test_any();
     // test_void();
     // test_null();
     // test_underfined();
     // test_null();
     // test_never();
     // test_object();
-    test_type_assertions();
+    // test_type_assertions();
 }
 
 // Boolean

@@ -4,6 +4,7 @@ import "./App.css";
 
 // TypeScript,start
 import { hi } from "./example";
+import { hi2 } from "./example2";
 import { test_class } from "./classes/people";
 import { test_inheritance } from "./classes/inheritance";
 import { test_modifiers_private } from "./classes/modifiers_private";
@@ -19,23 +20,12 @@ import { test_static_properties } from "./classes/static_properties";
 // TypeScript,end
 
 export function test_on() {
-  // START:Class with ingerface
-  // test_class();
-  // test_inheritance();
-  // test_modifiers_private();
-  // test_modifiers_private2();
-  // test_modifiers_protected();
-  // test_modifiers_protected2();
-  // test_modifier_Readonly();
-  // test_setter_checks();
-  test_static_properties();
-  // END:Class with ingerface,end
+  // Hello world Typescipt
+  hi("TypeScript");
+  hi2("TypeScript");
 }
 
 export const test_off = () => {
-  // Hello world Typescipt
-  hi("TypeScript");
-
   // START:Interface
   let stu = {
     firstName: "Apple",
@@ -45,8 +35,21 @@ export const test_off = () => {
   console.log(result);
   // END:START
 
-  // Basic types
+  // START:Class
+  // test_class();
+  // test_inheritance();
+  // test_modifiers_private();
+  // test_modifiers_private2();
+  // test_modifiers_protected();
+  // test_modifiers_protected2();
+  // test_modifier_Readonly();
+  // test_setter_checks();
+  // test_static_properties();
+  // END:Class
+
+  // START:Basic types
   test_basic_types();
+  // END:Basic types
 };
 
 // function App() {
