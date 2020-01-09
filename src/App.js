@@ -16,13 +16,26 @@ import { hiStu, Stu } from "./interfaces/Student";
 import { test_basic_types } from "./basic_types/test_basic_types";
 import { test_setter_checks } from "./classes/accessors";
 import { test_static_properties } from "./classes/static_properties";
+import { test_variale_declarations } from "./variable_declarations/variable_declarations";
+import { test_functions } from "./functions/functions";
+import { test_js_classes } from "./classes/People_js";
 
 // TypeScript,end
 
 export function test_on() {
   // Hello world Typescipt
-  hi("TypeScript");
-  hi2("TypeScript");
+  // hi("TypeScript");
+  // hi2("TypeScript");
+
+  test_js_classes();
+
+  // START:Variable Declarations
+  // test_variale_declarations();
+  // END:Variable Declarations
+
+  // STAR:Functions
+  // test_functions();
+  // END:Functions
 }
 
 export const test_off = () => {

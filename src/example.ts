@@ -22,21 +22,20 @@ function test1() {
         { key: "C", value: "C_Data" },
     ];
 
-    let t_symbol = item.symbol;
+    let t_symbol: string = item.symbol;
     console.log(t_symbol)
-    let d_symbol: string = '';
-    var myItem: any;
+    let dest_symbol: string = '';
 
     for (var i = 0; i < myList.length; i++) {
         if (myList[i].key === t_symbol) {
-            d_symbol = myList[i].key;
+            dest_symbol = myList[i].key;
         }
     }
 
-    if (_.isEmpty(d_symbol)) {
+    if (_.isEmpty(dest_symbol)) {
         console.log("symbol is empty");
     }
     else {
-        console.log("d_symbol =  " + d_symbol); // symbol A
+        console.log("d_symbol =  " + dest_symbol); // symbol A
     }
 }

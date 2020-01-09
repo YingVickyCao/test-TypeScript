@@ -4,7 +4,8 @@ export function hi2(str) {
   //   let result = "Hello, " + str;
   //   console.log(result);
 
-  test1();
+  // test1();
+  test2();
 }
 
 function test1() {
@@ -24,4 +25,9 @@ function test1() {
   } else {
     console.log("symbol " + item.symbol); // symbol A
   }
+}
+
+function test2() {
+  // var rawVal = [{ cols: [{k:"k_1",val:'val_1', use_default: false,isHeader:true}]}
+  // , { cols: [] uniqueKey:'uniqueKey_1'}];
 }
